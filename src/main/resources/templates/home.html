@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <style>
+        body {
+            background: linear-gradient(120deg, #6a11cb, #2575fc);
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #ffcc00;
+            text-decoration: underline;
+        }
+        .btn-danger {
+            background: #ff4b5c;
+            border: none;
+            transition: background 0.3s;
+        }
+        .btn-danger:hover {
+            background: #ff6f81;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to the Home Page!</h1>
+    <p>You have successfully logged in.</p>
+    <p><strong>User:</strong> <span th:text="${user}"></span></p>
+    <p><strong>Profile Link:</strong> <a th:href="${profileLink}" target="_blank">Access Profile</a></p>
+    <p><strong>Repositories:</strong> <span th:text="${repos}"></span></p>
+    <a href="/logout" class="btn btn-danger btn-lg mt-3">Logout</a>
+</div>
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
